@@ -14,12 +14,12 @@ public class MiscUtil {
     var travisRange = System.getenv("TRAVIS_COMMIT_RANGE");
 
     if (gitHash != null && gitPrevHash != null) {
-      project.exec(spec -> {
+      project.getProviders().exec(spec -> {
         spec.commandLine("git", "log", "--pretty=tformat:- %s", gitPrevHash + "..." + gitHash);
         spec.setStandardOutput(stdout);
       });
     } else if (travisRange != null) {
-      project.exec(spec -> {
+      project.getProviders().exec(spec -> {
         spec.commandLine("git", "log", "--pretty=tformat:- %s", travisRange);
         spec.setStandardOutput(stdout);
       });
@@ -34,7 +34,7 @@ public class MiscUtil {
   public static String getMostRecentPush(Project project) {
     var stdout = new ByteArrayOutputStream();
 
-    project.exec(spec -> {
+    project.getProviders().exec(spec -> {
       spec.commandLine("git", "log", "--pretty=tformat:%s", "HEAD~..HEAD");
       spec.setStandardOutput(stdout);
     });

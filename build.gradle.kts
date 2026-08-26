@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
-
 plugins {
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     id("java-gradle-plugin")
@@ -55,7 +53,7 @@ publishing {
     publications {
         create("mavenJava", MavenPublication::class.java) {
             groupId = project.group.toString()
-            artifactId = project.archivesName.get()
+            artifactId = project.base.archivesName.get()
             version = project.version.toString()
             from(components.getByName("java"))
         }
