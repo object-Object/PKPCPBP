@@ -23,6 +23,8 @@ dependencies {
     implementation(group = "net.darkhax.curseforgegradle", name = "CurseForgeGradle", version = "1.3.33")
     implementation(group = "com.modrinth.minotaur", name = "Minotaur", version = "2.9.0")
     implementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    // https://github.com/gradle/gradle/issues/33950
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 gradlePlugin {
