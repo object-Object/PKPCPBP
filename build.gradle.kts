@@ -5,9 +5,6 @@ plugins {
     id("java-gradle-plugin")
     id("maven-publish")
     `kotlin-dsl`
-
-//    id("net.darkhax.curseforgegradle") version "1.0.10"
-//    id("com.modrinth.minotaur") version "2.+"
 }
 
 group = "at.petra-k.pkpcpbp"
@@ -25,8 +22,8 @@ dependencies {
     implementation("blue.endless:jankson:1.2.2")
     implementation("com.diluv.schoomp:Schoomp:1.2.6")
 
-    implementation(group = "net.darkhax.curseforgegradle", name = "CurseForgeGradle", version = "1.0.10")
-    implementation(group = "com.modrinth.minotaur", name = "Minotaur", version = "2.8.7")
+    implementation(group = "net.darkhax.curseforgegradle", name = "CurseForgeGradle", version = "1.3.33")
+    implementation(group = "com.modrinth.minotaur", name = "Minotaur", version = "2.9.0")
     implementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 
